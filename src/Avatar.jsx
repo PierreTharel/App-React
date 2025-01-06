@@ -1,9 +1,7 @@
-function Avatar(props) {
+function Avatar(name, firstName, name) {
     return (
         <div>
-        {avatar.firstname} 
-        {avatar.lastname} 
-        {avatar.image}
+        
         </div>
     );
   }

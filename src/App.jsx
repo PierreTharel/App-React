@@ -1,32 +1,71 @@
 import './App.css'
-import Hello from './Hello.jsx'
-import Avatar from './Avatar.jsx'
+import axios from 'axios'
+import { useEffect, useState } from 'react'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import People from './People.jsx'
+
 
 function App() {
+  const [users, setUsers] = useState(null)
+  const [error, setError] = useState(null)
+  const [loading, setLoading] = useState(true)
+  URL = "https://jsonplaceholder.typicode.com/users"
+console.log(URL)
 
-  const avatar = [
-    {
-      firstName : "Homer",
-      lastname : "Simpson",
-      image : "https://www.webstickersmuraux.com/fr/img/as045mb-png/folder/products-detalle-png/autocollants-homer-simpson.png"
-    },
-    {
-      firstName : "Bart",
-      lastname : "Simpson",
-      image : "https://thumbs.dreamstime.com/b/bart-simpson-dessin-anim%C3%A9-vektor-formats-jpg-png-262242958.jpg"
+
+const fetchUsers = async () => {
+      try {
+          const response = await axios.get(URL);
+          setUsers(response.data)
+      } catch (err) {
+          setError(err.message)
+      }
+      finally {
+        setLoading(false)
+      }
     }
-  ]
 
-  return (
+useEffect(() => (
+  fetchUsers()
+ ), [])
+
+ if(loading) {
+  return <p>Chargement de la page...</p>
+ }
+
+ if (error){
+  return <p>{error}</p>
+ }
+  
+  
+  return (    
     <>
-    <div>
-      <Hello />
-      <Avatar />
+      {users && !loading && users.map(user => {
+      return (        
+        <div key={user}>
+      
+      <h3>Hello my name is {user.name}</h3>
+      <p>Email : {user.email}</p>
 
-    </div>
+      <BrowserRouter>
+      <nav>
+        <Link to="/">Accueil</Link> | <Link to="/people">Users</Link>
+      </nav>
+      <Routes>
+        <Route path="/" Component={App} />
+        <Route path="/people" Component={People} />
+      </Routes>
 
-    </>
+      </BrowserRouter>
+      
+      </div>
+
   )
+})
+}
+</>
+)
+
 }
 
 export default App
