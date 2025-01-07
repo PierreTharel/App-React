@@ -1,6 +1,6 @@
 import {Routes, Route} from 'react-router-dom'
 import App from './App.jsx'
-import NavBar from './components/NabBar.jsx'
+import NavBar from './components/NavBar.jsx'
 import User from './pages/User.jsx'
 import Weather from './pages/Weather.jsx'
 
