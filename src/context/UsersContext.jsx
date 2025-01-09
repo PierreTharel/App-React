@@ -2,9 +2,7 @@ import { createContext } from 'react'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-
 export const UserContext = createContext(null)
-
 
 export const UserController = ({ children }) => {
     const [users, setUsers] = useState(null)

@@ -4,13 +4,9 @@ import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/20/solid'
 import {Link} from 'react-router-dom'
 import { UserContext } from './context/UsersContext'
 
-
-
 function App() {
 
   const [users, error, loading] = useContext(UserContext)
-
- 
 
   if (loading) {
     return <p>Loading....</p>

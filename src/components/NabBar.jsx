@@ -86,26 +86,18 @@ export default function Example() {
               >
                 <MenuItem>
                   <a
-                    href="#"
+                    href="/register"
                     className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:outline-none"
                   >
-                    Your Profile
+                    Sign up
                   </a>
                 </MenuItem>
                 <MenuItem>
                   <a
-                    href="#"
+                    href="/login"
                     className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:outline-none"
                   >
-                    Settings
-                  </a>
-                </MenuItem>
-                <MenuItem>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:outline-none"
-                  >
-                    Sign out
+                    Login
                   </a>
                 </MenuItem>
               </MenuItems>

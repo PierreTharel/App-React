@@ -9,7 +9,7 @@ const musics = () => {
 
     const fetchMusic = async () => {
         try {
-            const response = await axios.get(musics)
+            const response = await axios.get('http://localhost:4000/api/musics')
             setMusic(response.data)
         }
         catch (err) {

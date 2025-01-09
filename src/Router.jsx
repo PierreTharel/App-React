@@ -5,6 +5,8 @@ import User from './pages/User.jsx'
 import Weather from './pages/Weather.jsx'
 import Musics from './pages/Musics.jsx'
 import Posts from './pages/Posts.jsx'
+import Register from './pages/Register.jsx'
+
 
 const Router = () => {
     return(
@@ -16,6 +18,7 @@ const Router = () => {
             <Route path='/weather' element={<Weather />} />
             <Route path='/musics' element={<Musics />} />
             <Route path='/posts' element={<Posts />} />
+            <Route path='/register' element={<Register />} /> 
             <Route path='*' element={<h1>404 page not found</h1>} />
         </Routes>
         </>

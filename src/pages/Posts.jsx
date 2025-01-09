@@ -10,7 +10,7 @@ const posts = () => {
 
     const fetchPost = async () => {
         try {
-            const response = await axios.get(posts)
+            const response = await axios.get('http://localhost:4000/api/posts', user)
             setPost(response.data)
         }
         catch (err) {
