@@ -3,6 +3,8 @@ import App from './App.jsx'
 import NavBar from './components/NabBar.jsx'
 import User from './pages/User.jsx'
 import Weather from './pages/Weather.jsx'
+import Musics from './pages/Musics.jsx'
+import Posts from './pages/Posts.jsx'
 
 const Router = () => {
     return(
@@ -12,6 +14,8 @@ const Router = () => {
             <Route path='/' element={<App />} />
             <Route path='/user/:id' element={<User />} />
             <Route path='/weather' element={<Weather />} />
+            <Route path='/musics' element={<Musics />} />
+            <Route path='/posts' element={<Posts />} />
             <Route path='*' element={<h1>404 page not found</h1>} />
         </Routes>
         </>
