@@ -26,6 +26,7 @@ const musics = () => {
         <>
             {musics && (
 
+            <div className="flex flex-col justify-center items-center " >
             <form onSubmit={(e) => {
                 e.preventDefault()
                 fetchMusic()
@@ -49,6 +50,8 @@ const musics = () => {
 
             <input type="submit" value="Ajouter une musique" />
             </form>
+
+            </div>
                             
             )}
         </>

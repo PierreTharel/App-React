@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
 
-
-
 const Weather = () => {
 
     const [city, setCity] = useState(city)
@@ -29,7 +27,6 @@ const Weather = () => {
 
     return (
         <>
-
 
             <div className="flex flex-col justify-center items-center " >
                 <form onSubmit={(e) => {
