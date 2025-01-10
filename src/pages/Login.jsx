@@ -1,18 +1,16 @@
 import { useState, useContext } from "react"
 import { AuthContext } from "../context/AuthContext"
 
-export default function Register() {
+export default function Login() {
     const [user, setUser] = useState({
-        first_name : '',
-        last_name : '',
         email : '',
         password : ''
     })
-    const {regiserUser} = useContext(AuthContext)
+    const {loginUser} = useContext(AuthContext)
 
     const handleSubmit = async (e, user) => {
         e.preventDefault()
-        regiserUser(user)
+        loginUser(user)
     }
 
     return (
@@ -25,46 +23,12 @@ export default function Register() {
               className="mx-auto h-10 w-auto"
             />
             <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
-              Sign up now
+              Sign in
             </h2>
           </div>
   
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
             <form action="#" method="POST" className="space-y-6" onSubmit={(e) => handleSubmit(e, user)}>
-            <div>
-                <label htmlFor="first_name" className="block text-sm/6 font-medium text-gray-900">
-                  First name
-                </label>
-                <div className="mt-2">
-                  <input
-                    id="first_name"
-                    name="first_name"
-                    type="first_name"
-                    required
-                    autoComplete="first_name"
-                    className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-                    onChange={e => setUser({...user, first_name : e.target.value })}
-                    />
-                </div>
-              </div>
-              <div>
-                <label htmlFor="last_name" className="block text-sm/6 font-medium text-gray-900">
-                  Last name
-                </label>
-                <div className="mt-2">
-                  <input
-                    id="last_name"
-                    name="last_name"
-                    type="last_name"
-                    required
-                    autoComplete="last_name"
-                    className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-                    onChange={e => setUser({...user, last_name : e.target.value })}
-
-                  />
-                </div>
-              </div>
-
               <div>
                 <label htmlFor="email" className="block text-sm/6 font-medium text-gray-900">
                   Email address
@@ -107,7 +71,7 @@ export default function Register() {
                   type="submit"
                   className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
-                  Sign up
+                  Sign in
                 </button>
               </div>
             </form>
